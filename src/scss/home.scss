@@ -1,0 +1,179 @@
+//====================================================================================================
+
+.first-screen {
+    padding-top: rem(120);
+    padding-bottom: rem(50);
+    position: relative;
+    @media (max-width: $tablet) {
+        padding-bottom: rem(30);
+        padding-top: rem(70);
+    }
+    @media (max-width: $mobile) {
+        padding-top: rem(55);
+    }
+    &__inner {
+        display: flex;
+        @media (max-width: $tablet) {
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 1 40%;
+        @media (max-width: $tablet) {
+            align-items: center;
+        }
+        &-title {
+            margin-bottom: rem(35);
+            @media (max-width: $tablet) {
+                text-align: center;
+                margin: rem(20) 0;
+            }
+        }
+        &-btn {
+            width: rem(146);
+        }
+        &-soсial {
+            margin-top: auto;
+            position: absolute;
+            bottom: rem(40);
+            left: rem(40);
+            @include adaptiveValue("left", 40, 15, 1920, 1200);
+            a {
+                font-size: rem(25);
+                color: $mainColor;
+                display: inline-block;
+                padding: rem(10);
+                transition: all 0.5s ease 0s;
+                &:first-child {
+                    padding-left: 0;
+                }
+                @media (any-hover: hover) and (any-pointer: fine) {
+                    &:hover {
+                        color: $colorGreen;
+                        transition: all 0.5s ease 0s;
+                    }
+                }
+            }
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__images {
+        position: relative;
+        flex: 0 0 60%;
+        @media (max-width: $tablet) {
+            flex: none;
+        }
+        &-img {
+            display: block;
+            padding: 0 0 60% 0;
+            min-height: rem(440);
+            @include adaptiveValue("margin-left", 60, 0, 991.98, 767.98, 1);
+            @include adaptiveValue("margin-right", 60, 0, 991.98, 767.98, 1);
+            @media (max-width: 991.98px) {
+                margin: 0 rem(-15);
+                min-height: auto;
+                padding: 0 0 50% 0;
+            }
+
+            &::before {
+                content: "";
+                border: 2px solid black;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                height: 100%;
+                width: 100%;
+                @media (max-width: $tablet) {
+                    display: none;
+                }
+            }
+        }
+        &-decor01 {
+            width: rem(100);
+            position: absolute;
+            top: rem(120);
+            right: rem(18);
+
+            img {
+                max-width: 100%;
+            }
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+        &-decor02 {
+            width: rem(190);
+            position: absolute;
+            bottom: rem(20);
+            left: rem(-18);
+
+            img {
+                max-width: 100%;
+            }
+            @media (max-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+}
+
+//====================================================================================================
+.content {
+    padding-top: rem(30);
+    @include adaptiveValue("padding-bottom", 50, 20);
+    &__nav {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 8;
+        background-color: $colorWhite;
+
+        &._nav-scroll {
+            position: fixed;
+            top: -200%;
+            transition: top 0.5s ease 0s;
+        }
+        &._nav-show {
+            top: 70px;
+            transition: top 0.5s ease 0s;
+            @media (max-width: $mobile) {
+                top: 55px;
+            }
+        }
+    }
+    &__nav-list {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: rem(10) 0;
+        @media (max-width: $tablet) {
+            overflow-x: scroll;
+            // margin: 0 rem(-15);
+        }
+
+        li {
+            margin: 0 rem(10);
+            @media (max-width: $tablet) {
+                margin: 0 rem(5);
+            }
+        }
+    }
+    &__products {
+        padding-top: rem(56);
+        display: grid;
+        row-gap: rem(10);
+        column-gap: rem(10);
+        grid-template-columns: repeat(auto-fit, minmax(rem(360), 1fr));
+        @media (max-width: $mobile) {
+            display: block;
+        }
+    }
+}

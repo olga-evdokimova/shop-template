@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Страница товара"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <div class="product__decor"><img src="@img/bg-photo.jpg" alt=""></div>
+            <section class="product __container">
+                <div class="product__wrap">
+                    <div class="breadcrumbs">
+                        <a href="">Главная</a>
+                        <a href="">Свитшот «Пора валить» черный оверсайз</a>
+                    </div>
+                    <h1 class="product__title">СВИТШОТ «ПОРА ВАЛИТЬ» черный ОВЕРСАЙЗ</h1>
+                    <div class="product__inner">
+                        <div class="product-gallery">
+                            <div class="product-gallery__img -ibg">
+                                <img src="@img/sweatshirt-1.jpg"></a>
+                            </div>
+                            <div class="product-gallery__items">
+                                <a href="" class="product-gallery__item -ibg active" data-src="img/sweatshirt-1.jpg">
+                                    <img src="@img/sweatshirt-1.jpg"></a>
+                                <a href="" class="product-gallery__item -ibg" data-src="img/sweatshirt-2.jpg">
+                                    <img src="@img/sweatshirt-2.jpg"></a>
+                                <a href="" class="product-gallery__item -ibg" data-src="img/sweatshirt-3.jpg">
+                                    <img src="@img/sweatshirt-3.jpg"></a>
+                                <a href="" class="product-gallery__item -ibg" data-src="img/sweatshirt-2.jpg">
+                                    <img src="@img/sweatshirt-2.jpg"></a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <div class="product-content__price rub">4290</div>
+                            <span class="product-content__status">В наличии</span>
+                            <div class="product-discription">
+                                <p>ВНИМАНИЕ! сроки УПАКОВКИ/ОТПРАВКИ ДО 30.12.2021</p>
+                                <p>Oversize свитшот черного цвета, для тех, кому Пора
+                                    Валить;
+                                </p>
+                                <p class="product-discription__text">Принт - Шелкография;</p>
+                                <p class="product-discription__text">Состав - 100% Хлопок.</p>
+                            </div>
+                            <div class="product-select">
+                                <form class="product-select__form" action="">
+                                    <label class="product-select__form-label" for="">Цвет</label>
+                                    <div class="radio-color">
+                                        <input class="radio-color__custom" type="radio" name="color" id="color-01" checked="checked">
+                                        <label for="color-01" style="color:blue"></label>
+                                    </div>
+                                    <div class="radio-color">
+                                        <input class="radio-color__custom" type="radio" name="color" id="color-02">
+                                        <label for="color-02" style="color:red"></label>
+                                    </div>
+                                    <div class="radio-color">
+                                        <input class="radio-color__custom" type="radio" name="color" id="color-03">
+                                        <label for="color-03" style="color:green"></label>
+                                    </div>
+                                </form>
+                                <form class="product-select__form" action="">
+                                    <label class="product-select__form-label" for="">Размер</label>
+                                    <div class="radio-size">
+                                        <input class="radio-size__custom" type="radio" name="radio" id="radio-01">
+                                        <label for="radio-01"><span>S-M</span></label>
+                                    </div>
+                                    <div class="radio-size">
+                                        <input class="radio-size__custom" type="radio" name="radio" id="radio-02"
+                                            disabled="disabled">
+                                        <label for="radio-02"><span>M-L</span></label>
+                                    </div>
+                                    <div class="radio-size">
+                                        <input class="radio-size__custom" type="radio" name="radio" id="radio-03">
+                                        <label for="radio-03"><span>L-XL</span></label>
+                                    </div>
+                                </form>
+                                <div data-popup="#popup"  class="product-select__btn">Таблица размеров</div>
+                            </div>
+
+                            <div class="quantity">
+                                <label for="">Количество</label>
+                                <div class="quantity__counter">
+                                    <div class="quantity__button quantity__button_minus">-</div>
+                                    <input autocomplete="off" type="text" name="quantity" value="1">
+                                    <div class="quantity__button quantity__button_plus">+</div>
+                                </div>
+                            </div>
+                            <button class="product-btn btn-buy ">Добавить в корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-featured">
+                        <h2 class="product-featured__title">РЕКОМЕНДУЕМЫЕ товары</h2>
+                        <div class="product-featured__inner">
+                            <div class="product-featured__item">
+                                @@include('./html/_card.htm',{})
+                            </div>
+                            <div class="product-featured__item">
+                                @@include('./html/_card.htm',{})
+                            </div>
+                            <div class="product-featured__item">
+                                @@include('./html/_card.htm',{})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

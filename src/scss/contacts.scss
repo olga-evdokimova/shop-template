@@ -1,0 +1,42 @@
+.contacts {
+    h2 {
+       
+        @include adaptiveValue("font-size",36, 20);
+    }
+    &__inner {
+        padding: rem(120) 0 rem(50);
+        @media (max-width: $mobile) {
+            padding: rem(85) 0 rem(40);
+        }
+    }
+    &__title {
+        padding: rem(18) 0 rem(40);
+        @media (max-width: $mobile) {
+            padding-bottom: rem(10);
+        }
+    }
+    &__block {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: rem(10) 0 rem(10) rem(20);
+        margin-bottom: rem(40);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: $colorGreyLight;
+        }
+        span {
+            padding-bottom: rem(10);
+            font-size: rem(18);
+            font-weight: 400;
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

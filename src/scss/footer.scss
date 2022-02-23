@@ -1,0 +1,111 @@
+//====================================================================================================
+.footer {
+    background-color: $mainColor;
+    color: $colorWhite;
+    padding: rem(30) 0;
+    z-index: 1;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__item {
+    }
+    &__mail {
+        display: block;
+        padding: 0 rem(5) rem(10);
+        margin-bottom: rem(5);
+        text-align: center;
+        transition: all 0.5s ease 0s;
+        @media (any-hover: hover) and (any-pointer: fine) {
+            &:hover {
+                text-decoration: underline;
+                transition: all 0.5s ease 0s;
+            }
+        }
+    }
+    &__soсial {
+        margin-bottom: rem(15);
+        display: flex;
+        justify-content: space-between;
+        a {
+            font-size: rem(25);
+            color: $colorWhite;
+            display: inline-block;
+            padding: rem(10);
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+            transition: all 0.5s ease 0s;
+            @media (any-hover: hover) and (any-pointer: fine) {
+                &:hover {
+                    color: $colorGreen;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+        }
+    }
+
+    &__copy {
+        color: $colorCopy;
+        font-weight: 400;
+        white-space: nowrap;
+        @media (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+}
+
+.menu-footer {
+    display: flex;
+    padding: 0 rem(20);
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        padding: 0;
+    }
+    &__list {
+        &:last-child {
+            @include adaptiveValue("margin-left", 160, 0);
+            @media (max-width: $tablet) {
+                margin: 0;
+            }
+        }
+        li {
+            margin-bottom: rem(15);
+            text-transform: uppercase;
+            @media (max-width: $mobile) {
+                text-align: center;
+            }
+        }
+        a {
+            padding: rem(5);
+            transition: all 0.5s ease 0s;
+            @media (any-hover: hover) and (any-pointer: fine) {
+                &:hover {
+                    text-decoration: underline;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+        }
+    }
+}
+.logo-footer {
+    display: block;
+    width: rem(130);
+    overflow: hidden;
+    margin-bottom: rem(25);
+    @media (max-width: $mobile) {
+        width: rem(110);
+    }
+    img {
+        max-width: 100%;
+    }
+}
+//====================================================================================================
