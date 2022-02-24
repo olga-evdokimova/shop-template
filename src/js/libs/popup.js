@@ -17,11 +17,11 @@ class Popup {
 			attributeOpenButton: 'data-popup', // Атрибут для кнопки, которая вызывает попап
 			attributeCloseButton: 'data-close', // Атрибут для кнопки, которая закрывает попап
 			// Для сторонних объектов
-			fixElementSelector: '[data-lp]', // Атрибут для элементов с левым паддингом (которые fixed)
+			// fixElementSelector: '[data-lp]', // Атрибут для элементов с левым паддингом (которые fixed)
 			// Для объекта попапа
-			youtubeAttribute: 'data-popup-youtube', // Атрибут для кода youtube
-			youtubePlaceAttribute: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
-			setAutoplayYoutube: true,
+			// youtubeAttribute: 'data-popup-youtube', // Атрибут для кода youtube
+			// youtubePlaceAttribute: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
+			// setAutoplayYoutube: true,
 			// Изменение классов
 			classes: {
 				popup: 'popup',
@@ -44,8 +44,8 @@ class Popup {
 				afterClose: function () { },
 			},
 		}
-		this.youTubeCode;
-		this.isOpen = false;
+		// this.youTubeCode;
+		// this.isOpen = false;
 		// Текущее окно
 		this.targetOpen = {
 			selector: false,
@@ -102,7 +102,7 @@ class Popup {
 		this.options.init ? this.initPopups() : null
 	}
 	initPopups() {
-		this.popupLogging(`Проснулся`);
+		// this.popupLogging(`Проснулся`);
 		this.eventsPopup();
 	}
 	eventsPopup() {
@@ -115,9 +115,9 @@ class Popup {
 				this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ?
 					buttonOpen.getAttribute(this.options.attributeOpenButton) :
 					'error';
-				this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ?
-					buttonOpen.getAttribute(this.options.youtubeAttribute) :
-					null;
+				// this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ?
+				// 	buttonOpen.getAttribute(this.options.youtubeAttribute) :
+				// 	null;
 				if (this._dataValue !== 'error') {
 					if (!this.isOpen) this.lastFocusEl = buttonOpen;
 					this.targetOpen.selector = `${this._dataValue}`;
@@ -189,22 +189,22 @@ class Popup {
 
 			if (this.targetOpen.element) {
 				// YouTube
-				if (this.youTubeCode) {
-					const codeVideo = this.youTubeCode;
-					const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
-					const iframe = document.createElement('iframe');
-					iframe.setAttribute('allowfullscreen', '');
+				// if (this.youTubeCode) {
+				// 	const codeVideo = this.youTubeCode;
+				// 	const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
+				// 	const iframe = document.createElement('iframe');
+				// 	iframe.setAttribute('allowfullscreen', '');
 
-					const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
-					iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
+				// 	const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
+				// 	iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
 
-					iframe.setAttribute('src', urlVideo);
+				// 	iframe.setAttribute('src', urlVideo);
 
-					if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
-						const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
-					}
-					this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
-				}
+				// 	if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
+				// 		const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
+				// 	}
+				// 	this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
+				// }
 				if (this.options.hashSettings.location) {
 					// Получение хэша и его выставление 
 					this._getHash();
@@ -250,7 +250,7 @@ class Popup {
 						popup: this
 					}
 				}));
-				this.popupLogging(`Открыл попап`);
+				// this.popupLogging(`Открыл попап`);
 
 			} else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
 		}
@@ -272,10 +272,10 @@ class Popup {
 		}));
 
 		// YouTube
-		if (this.youTubeCode) {
-			if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
-				this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
-		}
+		// if (this.youTubeCode) {
+		// 	if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
+		// 		this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
+		// }
 		this.previousOpen.element.classList.remove(this.options.classes.popupActive);
 		// aria-hidden
 		this.previousOpen.element.setAttribute('aria-hidden', 'true');
@@ -304,7 +304,7 @@ class Popup {
 			this._focusTrap();
 		}, 50);
 
-		this.popupLogging(`Закрыл попап`);
+		// this.popupLogging(`Закрыл попап`);
 	}
 	// Получение хэша 
 	_getHash() {
@@ -351,9 +351,9 @@ class Popup {
 		}
 	}
 	// Функция вывода в консоль
-	popupLogging(message) {
-		this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
-	}
+	// popupLogging(message) {
+	// 	this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
+	// }
 }
 // Запускаем и добавляем в объект модулей
 flsModules.popup = new Popup({});

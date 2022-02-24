@@ -1,7 +1,8 @@
 //====================================================================================================
 .header {
 	position: fixed;
-	width: 100%;
+	//так как fixed, чтоб не прыгал хедер при открытии попапа  width: 100vw;
+	width: 100vw;
 	z-index: 10;
 	background-color: $colorWhite;
 	box-shadow: 0px rem(-3) rem(14) 0px rgba(79, 79, 79, 0.39);

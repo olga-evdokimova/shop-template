@@ -1,6 +1,7 @@
 body::after {
 	content: "";
 	background-color: rgba(0, 0, 0, 0.5);
+	//background-color: $colorGreen;
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -45,6 +46,7 @@ body::after {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	
 }
 .popup__content {
 	visibility: hidden;
@@ -82,7 +84,7 @@ body::after {
 }
 .popup__image {
 	max-width: rem(400);
-	img{
+	img {
 		max-width: 100%;
 	}
 }

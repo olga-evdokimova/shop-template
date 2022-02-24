@@ -67,3 +67,32 @@ if (document.querySelector('.product-gallery__img')) {
 }
 //===================================================
 
+// const popupFun = () => {
+//     const popupBtn = document.querySelector('.product-select__btn')
+//     const popup = document.querySelector('.popup')
+//     const popupClose = document.querySelector('.popup__close')
+//     console.log(popupBtn);
+//     console.log(popup);
+
+//     // Прослушиваем клик на кнопке Открытия, и Открываем модалку
+//     popupBtn.addEventListener('click', function () {
+//         popup.classList.add('popup_show');
+//         document.documentElement.classList.add('popup_show', 'lock');
+//     })
+//     // Прослушиваем клик на кнопке Закрытия, и Закрываем модалку
+//     popupClose.addEventListener('click', function () {
+//         popup.classList.remove('popup_show');
+//         document.documentElement.classList.remove('popup_show', 'lock');
+//     });
+
+//     popup.addEventListener('click', function () {
+//        // document.documentElement.classList.remove('popup_show', 'lock');
+//     })
+
+//     // popup.querySelector('.popup__wrapper').addEventListener('click', function (e) {
+//     //     e.stopPropagation();
+//     // })
+
+// }
+// popupFun()
+
