@@ -60,11 +60,6 @@
             }
         }));
     }
-    function functions_FLS(message) {
-        setTimeout((() => {
-            if (window.FLS) console.log(message);
-        }), 0);
-    }
     class Popup {
         constructor(options) {
             let config = {
@@ -72,10 +67,6 @@
                 init: true,
                 attributeOpenButton: "data-popup",
                 attributeCloseButton: "data-close",
-                fixElementSelector: "[data-lp]",
-                youtubeAttribute: "data-popup-youtube",
-                youtubePlaceAttribute: "data-popup-youtube-place",
-                setAutoplayYoutube: true,
                 classes: {
                     popup: "popup",
                     popupContent: "popup__content",
@@ -96,8 +87,6 @@
                     afterClose: function() {}
                 }
             };
-            this.youTubeCode;
-            this.isOpen = false;
             this.targetOpen = {
                 selector: false,
                 element: false
@@ -136,7 +125,6 @@
             this.options.init ? this.initPopups() : null;
         }
         initPopups() {
-            this.popupLogging(`Проснулся`);
             this.eventsPopup();
         }
         eventsPopup() {
@@ -145,7 +133,6 @@
                 if (buttonOpen) {
                     e.preventDefault();
                     this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
-                    this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ? buttonOpen.getAttribute(this.options.youtubeAttribute) : null;
                     if ("error" !== this._dataValue) {
                         if (!this.isOpen) this.lastFocusEl = buttonOpen;
                         this.targetOpen.selector = `${this._dataValue}`;
@@ -197,19 +184,6 @@
                 if (!this._reopen) this.previousActiveElement = document.activeElement;
                 this.targetOpen.element = document.querySelector(this.targetOpen.selector);
                 if (this.targetOpen.element) {
-                    if (this.youTubeCode) {
-                        const codeVideo = this.youTubeCode;
-                        const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
-                        const iframe = document.createElement("iframe");
-                        iframe.setAttribute("allowfullscreen", "");
-                        const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
-                        iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
-                        iframe.setAttribute("src", urlVideo);
-                        if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
-                            this.targetOpen.element.querySelector(".popup__text").setAttribute(`${this.options.youtubePlaceAttribute}`, "");
-                        }
-                        this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
-                    }
                     if (this.options.hashSettings.location) {
                         this._getHash();
                         this._setHash();
@@ -237,7 +211,6 @@
                             popup: this
                         }
                     }));
-                    this.popupLogging(`Открыл попап`);
                 } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
             }
         }
@@ -250,7 +223,6 @@
                     popup: this
                 }
             }));
-            if (this.youTubeCode) if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = "";
             this.previousOpen.element.classList.remove(this.options.classes.popupActive);
             this.previousOpen.element.setAttribute("aria-hidden", "true");
             if (!this._reopen) {
@@ -272,7 +244,6 @@
             setTimeout((() => {
                 this._focusTrap();
             }), 50);
-            this.popupLogging(`Закрыл попап`);
         }
         _getHash() {
             if (this.options.hashSettings.location) this.hash = this.targetOpen.selector.includes("#") ? this.targetOpen.selector : this.targetOpen.selector.replace(".", "#");
@@ -304,9 +275,6 @@
         _focusTrap() {
             const focusable = this.previousOpen.element.querySelectorAll(this._focusEl);
             if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
-        }
-        popupLogging(message) {
-            this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
         }
     }
     modules_flsModules.popup = new Popup({});

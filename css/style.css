@@ -87,7 +87,6 @@ body {
 
 body {
   color: #000;
-  line-height: 1;
   font-family: "RobotoCondensed", sans-serif;
   font-size: 0.875rem;
   -ms-text-size-adjust: 100%;
@@ -394,6 +393,11 @@ h6 {
   }
 }
 
+p,
+span {
+  line-height: 1.2;
+}
+
 .breadcrumbs {
   font-weight: 400;
   font-size: 0.75rem;
@@ -635,7 +639,7 @@ h6 {
 
 .header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 10;
   background-color: #fff;
   -webkit-box-shadow: 0px -0.1875rem 0.875rem 0px rgba(79, 79, 79, 0.39);
@@ -730,6 +734,10 @@ h6 {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.menu__list a {
+  font-size: 1.25rem;
 }
 
 .menu a {
@@ -1156,6 +1164,10 @@ h6 {
 
 .contacts__block span:last-child {
   padding-bottom: 0;
+}
+
+.contacts__block b {
+  padding-right: 0.375rem;
 }
 
 .confidentiality h4 {
@@ -1715,12 +1727,12 @@ h6 {
 
   .menu__body {
     position: fixed;
-    width: 10.625rem;
+    width: 12.5rem;
     height: 100%;
     top: 0;
     overflow: auto;
     background-color: #000;
-    padding: 3.125rem 0.9375rem 3.125rem 0.9375rem;
+    padding: 3.125rem 0.9375rem 3.125rem 1.25rem;
     z-index: 4;
     color: #fff;
   }
@@ -1728,7 +1740,7 @@ h6 {
   .menu__body::before {
     content: "";
     position: fixed;
-    width: 10.625rem;
+    width: 12.5rem;
     height: 3.125rem;
     left: -100%;
     top: 0;
@@ -1761,6 +1773,7 @@ h6 {
 
   .menu__list-cat li:not(:first-child) a {
     text-transform: capitalize;
+    font-size: 1.125rem;
   }
 
   .menu a {
