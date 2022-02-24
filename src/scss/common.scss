@@ -17,6 +17,10 @@ h6 {
     @include adaptiveValue("font-size", 20, 16);
     text-transform: uppercase;
 }
+p,
+span {
+    line-height: 1.2;
+}
 .breadcrumbs {
     font-weight: 400;
     font-size: rem(12);

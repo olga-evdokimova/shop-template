@@ -1,10 +1,10 @@
 //====================================================================================================
 .header {
 	position: fixed;
-        width: 100%;
-        z-index: 10;
-        background-color: $colorWhite;
-		  box-shadow: 0px rem(-3) rem(14) 0px rgba(79, 79, 79, 0.39);
+	width: 100%;
+	z-index: 10;
+	background-color: $colorWhite;
+	box-shadow: 0px rem(-3) rem(14) 0px rgba(79, 79, 79, 0.39);
 	&__inner {
 		display: flex;
 		align-items: center;
@@ -74,18 +74,18 @@
 		transition: left 0.5s ease 0s;
 		@media (max-width: $mobile) {
 			position: fixed;
-			width: rem(170);
+			width: rem(200);
 			height: 100%;
 			top: 0;
 			overflow: auto;
 			background-color: $mainColor;
-			padding: rem(50) rem(15) rem(50) rem(15);
+			padding: rem(50) rem(15) rem(50) rem(20);
 			z-index: 4;
 			color: $colorWhite;
 			&::before {
 				content: "";
 				position: fixed;
-				width: rem(170);
+				width: rem(200);
 				height: rem(50);
 				left: -100%;
 				top: 0;
@@ -115,12 +115,16 @@
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
+		a {
+			font-size: rem(20);
+		}
 		&-cat {
 			@media (max-width: $mobile) {
 				li:not(:first-child) {
 					margin-left: rem(20);
 					a {
 						text-transform: capitalize;
+						font-size: rem(18);
 					}
 				}
 			}
@@ -183,7 +187,7 @@
 			span {
 				width: 0;
 			}
-			
+
 			&::before {
 				top: calc(50% - rem(1));
 				transform: rotate(-45deg);
