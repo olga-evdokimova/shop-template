@@ -83,7 +83,7 @@ const getGoods = () => {
             goodBlock.innerHTML = `
                  <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>
                         <div class="card__inner">
-                           <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">
+                           <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image ">
                           
                              <img src="img/${good.img}" alt="${good.name}">
                              <span class="card__badge green ${good.card__badge ? null : 'none'}"">${good.label}</span>

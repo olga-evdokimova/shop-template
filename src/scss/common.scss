@@ -115,9 +115,21 @@ span {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        background-color: $colorWhite;
     }
     &__image {
         padding: 0 0 100% 0;
+        position: relative;
+        img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 100%;
+            height: 100%;
+            object-fit: contain;
+           padding: 10px;
+        }
     }
     &__badge {
         position: absolute;
@@ -133,10 +145,9 @@ span {
         border-radius: rem(20);
         min-width: rem(75);
         height: rem(30);
-      
     }
     &__content {
-        flex:1 1 auto;
+        flex: 1 1 auto;
         padding: rem(25) rem(10) rem(25) rem(15);
         background-color: $colorWhite;
         display: flex;
@@ -209,6 +220,6 @@ span {
         }
     }
 }
-  .none {
-            display: none;
-        }
+.none {
+    display: none;
+}
