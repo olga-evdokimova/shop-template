@@ -165,7 +165,38 @@
                 margin: 0 rem(5);
             }
         }
+        
     }
+    &__nav-link {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            font-size: rem(14);
+            line-height: 1.2;
+            white-space: nowrap;
+            min-width: rem(136);
+            height: rem(36);
+            padding: rem(10) rem(5);
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            transition: all 0.5s ease 0s;
+
+            @media (any-hover: hover) and (any-pointer: fine) {
+                &:hover {
+                    border: 1px solid $mainColor;
+                    color: $mainColor;
+                    transition: all 0.5s ease 0s;
+                }
+            }
+            @media (max-width: $mobile) {
+                border: rem(1) solid $mainColor;
+                min-width: rem(120);
+            }
+            &._active {
+                background-color: $colorGreyLight;
+            }
+        }
     &__products {
         padding-top: rem(56);
         display: grid;

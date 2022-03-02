@@ -63,35 +63,6 @@ span {
     }
 }
 
-.btn-product {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    font-size: rem(14);
-    line-height: 1.2;
-    white-space: nowrap;
-    min-width: rem(136);
-    height: rem(36);
-    padding: rem(10) rem(5);
-    text-transform: uppercase;
-    border: 1px solid transparent;
-    transition: all 0.5s ease 0s;
-    @media (any-hover: hover) and (any-pointer: fine) {
-        &:hover {
-            border: 1px solid $mainColor;
-            color: $mainColor;
-            transition: all 0.5s ease 0s;
-        }
-    }
-    @media (max-width: $mobile) {
-        border: rem(1) solid $mainColor;
-        min-width: rem(120);
-    }
-    &._active {
-        background-color: $colorGreyLight;
-    }
-}
 .rub:after {
     content: "₽";
     padding-left: rem(5);
@@ -140,11 +111,12 @@ span {
         }
     }
     &__inner {
+        height: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
     &__image {
-        display: block;
         padding: 0 0 100% 0;
     }
     &__badge {
@@ -161,23 +133,27 @@ span {
         border-radius: rem(20);
         min-width: rem(75);
         height: rem(30);
+      
     }
     &__content {
+        flex:1 1 auto;
         padding: rem(25) rem(10) rem(25) rem(15);
         background-color: $colorWhite;
-        // transition: all 0.5s ease 0s;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         @media (max-width: $tablet) {
             padding: rem(25);
         }
         &-title {
             text-transform: uppercase;
-            padding-bottom: rem(15);
+            margin-bottom: rem(15);
             letter-spacing: rem(-1);
             transition: transform 0.5s ease 0s;
         }
         &-priсe {
             font-size: rem(24);
+            margin-top: auto;
             margin-bottom: rem(10);
             transition: transform 0.5s ease 0s;
         }
@@ -233,3 +209,6 @@ span {
         }
     }
 }
+  .none {
+            display: none;
+        }

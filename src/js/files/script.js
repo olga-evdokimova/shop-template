@@ -66,6 +66,81 @@ if (document.querySelector('.product-gallery__img')) {
     activeItem.classList.add("active")
 }
 //===================================================
+const getGoods = () => {
+    const links = document.querySelectorAll('.content__nav-link')
+    const renderGoods = (goods) => {
+        const goodsContainer = document.querySelector('.content__products')
+        goodsContainer.innerHTML = ""
+        //перебираем массив goods
+        goods.forEach(good => {
+            //создаем в контейнере див( есть в верстке)
+            const goodBlock = document.createElement('div')
+            //добавляем ему классы( есть в верстке)
+            goodBlock.classList.add('card')
+            console.log(goodBlock);
+            //в этот блок записываем верстку каждого товара
+            // если в лйбл пусто добавляется d-none(класс с {display:none!important}) и он не показывается
+            goodBlock.innerHTML = `
+                 <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>
+                        <div class="card__inner">
+                           <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">
+                          
+                             <img src="img/${good.img}" alt="${good.name}">
+                             <span class="card__badge green ${good.card__badge ? null : 'none'}"">${good.label}</span>
+                           </a>
+                            <div class="card__content">
+                            <a href="https://olga-evdokimova.github.io/shop-template/single.html">
+                              <h4 class="card__content-title">${good.name}</h4>
+                            </a>
+                            <div class="card__content-priсe rub">${good.price}</div>
+                            <div class="card__content-status">В наличии</div>
+                            <a href="" class="card__content-cart"><img src="img/cart.svg" alt=""></a>
+                        </div>
+                    </div>
+            `
+            //обращаемся к контейнеру и в каждом переборе используем метод append которай добавляет каждый очередной goodBlock (тоесть выводит все карточки сколько их отфильтровалось )
+            goodsContainer.append(goodBlock)
+
+        })
+    }
+    //функция работы с массивом данных data. получаем весь массив данных из json файла
+    const getData = (value, category) => {
+        fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
+            .then((res) => res.json())
+            .then((data) => {
+                //если категория есть то возвращаем фильтрованную дату(массив данных) , если категории нет то возвращаем всю дату(массив данных)
+                const array = category ? data.filter((item) => item[category] === value) : data
+                localStorage.setItem('goods', JSON.stringify(array))
+
+            })
+    }
+    let activeLink;
+    //перебираем кнопки(категории товаров) и навешиваем на них клик
+    links.forEach((link) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault()
+            activeLink.classList.remove("_active")
+            activeLink = link
+            activeLink.classList.add("_active")
+            //получаем текстовое содержимое кликнутой ссылки
+            const linkValue = link.textContent
+            const category = link.dataset.field
+            getData(linkValue, category)
+        })
+    })
+    activeLink = links[0]
+    activeLink.classList.add("_active")
+
+    if (localStorage.getItem('goods')) {
+        renderGoods(JSON.parse(localStorage.getItem('goods')))
+    }
+
+}
+getGoods()
+
+
+
+
 
 // const popupFun = () => {
 //     const popupBtn = document.querySelector('.product-select__btn')
