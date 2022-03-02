@@ -86,7 +86,7 @@ const getGoods = () => {
                            <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image ">
                           
                              <img src="img/${good.img}" alt="${good.name}">
-                             <span class="card__badge green ${good.card__badge ? null : 'none'}"">${good.label}</span>
+                             <span class="card__badge green ${good.lebel ? null : 'none'}"">${good.label}</span>
                            </a>
                             <div class="card__content">
                             <a href="https://olga-evdokimova.github.io/shop-template/single.html">
@@ -111,7 +111,9 @@ const getGoods = () => {
                 //если категория есть то возвращаем фильтрованную дату(массив данных) , если категории нет то возвращаем всю дату(массив данных)
                 const array = category ? data.filter((item) => item[category] === value) : data
                 localStorage.setItem('goods', JSON.stringify(array))
-
+                if (localStorage.getItem('goods')) {
+                    renderGoods(JSON.parse(localStorage.getItem('goods')))
+                }
             })
     }
     let activeLink;
