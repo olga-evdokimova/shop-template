@@ -8,7 +8,7 @@ import { flsModules } from "./modules.js";
     //Страница показывается после полной загрузки с задержкой 5сек
     window.addEventListener("load", function () {
         // setTimeout(function () {
-            document.body.style.cssText = 'opacity: 1; visibility: visible; transition: opacity 1.2s ease 0s;'
+        document.body.style.cssText = 'opacity: 1; visibility: visible; transition: opacity 1.2s ease 0s;'
         // }, 500);
     });
 
@@ -65,7 +65,8 @@ import { flsModules } from "./modules.js";
     //сразу 
     // добавить спиннер
     const response = await fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
-    const db = await response.json()
+    const data = await response.json()
+   
     // убираем спиннер
 
     //===================================================
@@ -105,12 +106,10 @@ import { flsModules } from "./modules.js";
     }
 
     //функция работы с массивом данных data. получаем весь массив данных из json файла
-    const getDataAndRender = (category) => {
+    const getData = (category) => {
         //если категория есть то возвращаем фильтрованную дату(массив данных) , если категории нет то возвращаем всю дату(массив данных)
-        const array = category
-            ? db.filter((item) => item.category === category)
-            : db
-        
+        const array = category ? data.filter((item) => item.category === category) : data
+
         renderGoods(array)
     }
 
@@ -124,16 +123,16 @@ import { flsModules } from "./modules.js";
             activeLink.classList.add("_active")
             //получаем текстовое содержимое кликнутой ссылки
             const category = link.dataset.category // data-category = "значение"
-        
-            getDataAndRender(category)
+
+            getData(category)
         })
     })
     activeLink = links[0]
     activeLink.classList.add("_active")
 
-    getDataAndRender()
+    getData()
 
-
+})()
 
 
     // const popupFun = () => {
@@ -165,4 +164,3 @@ import { flsModules } from "./modules.js";
     // }
     // popupFun()
 
-})()
