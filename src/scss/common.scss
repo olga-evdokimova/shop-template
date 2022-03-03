@@ -119,17 +119,17 @@ span {
     }
     &__image {
         padding: 0 0 100% 0;
-        position: relative;
-        img {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 10px;
-        }
+        // position: relative;
+        // img {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     max-width: 100%;
+        //     height: 100%;
+        //     object-fit: contain;
+        //     padding: 10px;
+        // }
     }
     &__badge {
         position: absolute;
@@ -140,12 +140,12 @@ span {
         align-items: center;
         color: $colorWhite;
         font-weight: 500;
+        line-height: 1;
         text-transform: capitalize;
         padding: rem(5);
         border-radius: rem(20);
         min-width: rem(75);
         height: rem(30);
-       background-color: $colorGreen;
     }
     &__content {
         flex: 1 1 auto;
@@ -191,8 +191,8 @@ span {
     background-color: $colorGreen;
 }
 
-.grey {
-    background-color: $colorCopy;
+.red {
+    background-color: red;
 }
 .banner {
     margin: rem(30) 0;
