@@ -128,7 +128,7 @@ span {
             max-width: 100%;
             height: 100%;
             object-fit: contain;
-           padding: 10px;
+            padding: 10px;
         }
     }
     &__badge {
@@ -145,6 +145,7 @@ span {
         border-radius: rem(20);
         min-width: rem(75);
         height: rem(30);
+       background-color: $colorGreen;
     }
     &__content {
         flex: 1 1 auto;
@@ -185,9 +186,11 @@ span {
         }
     }
 }
+
 .green {
     background-color: $colorGreen;
 }
+
 .grey {
     background-color: $colorCopy;
 }
@@ -220,6 +223,6 @@ span {
         }
     }
 }
-.none {
+.none{
     display: none;
 }

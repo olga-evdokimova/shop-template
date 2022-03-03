@@ -1,14 +1,13 @@
 {
-  "db":[
+  "db": [
     {
       "id": "001",
       "img": "img/image-122.jpg",
       "name": "Striped Long Sleeve Shirt",
       "label": "new",
-      "description": "Red/Sky Blue",
+      "descriptions": "В наличии",
       "price": "119",
       "category": "шапки",
-     
       "offer": false
     },
     {
@@ -16,10 +15,9 @@
       "img": "img/201mt210e.jpg",
       "name": "Poplin Top With Sleeve Bow",
       "label": "Bestseller",
-      "description": "Bright Blue",
+      "descriptions": "В наличии",
       "price": "129",
       "category": "шапки",
-     
       "offer": false
     },
     {
@@ -27,10 +25,9 @@
       "img": "img/61SVZdHi1SL.jpg",
       "name": "TOMS Women's Alpargata Loafer",
       "label": "Bestseller",
-      "description": "Red",
+      "descriptions": "Ожидается",
       "price": "219",
       "category": "шапки",
-     
       "offer": false
     },
     {
@@ -38,10 +35,9 @@
       "img": "img/thR2gxLUL1152.jpg",
       "name": "Text T-Shirt",
       "label": "Bestseller",
-      "description": "Pink and dogs",
+      "descriptions": "Ожидается",
       "price": "119",
       "category": "шапки",
-     
       "offer": false
     },
     {
@@ -49,10 +45,9 @@
       "img": "img/81ecpN8bKL.jpg",
       "name": "Sweater Choker Neck",
       "label": "Bestseller",
-      "description": "Dustyolive",
+      "descriptions": "В наличии",
       "price": "319",
       "category": "футболки",
-     
       "offer": false
     },
     {
@@ -60,10 +55,9 @@
       "img": "img/61xZxTBffZL.jpg",
       "name": "SJP by Sarah Jessica Parker",
       "label": "",
-      "description": "Black/Nude Patent",
+      "descriptions": "В наличии",
       "price": "242",
       "category": "футболки",
-     
       "offer": false
     },
     {
@@ -71,10 +65,9 @@
       "img": "img/71AogkKMguL.jpg",
       "name": "ECCO Biom Aex Luxe Hydromax Water-Resistant Cross Trainer",
       "label": "",
-      "description": "Black",
+      "descriptions": "Ожидается",
       "price": "199",
       "category": "футболки",
- 
       "offer": false
     },
     {
@@ -82,10 +75,9 @@
       "img": "img/71wbXtpEwQL.jpg",
       "name": "Nike Air Max Torch 3 Men's Running Shoes",
       "label": "",
-      "description": "Black/White",
+      "descriptions": "В наличии",
       "price": "153",
       "category": "футболки",
-    
       "offer": false
     },
     {
@@ -93,10 +85,9 @@
       "img": "img/71Ka10xx6.jpg",
       "name": "Printed Shirt with a Bow",
       "label": "",
-      "description": "Pink/Sky Blue/Yellow",
+      "descriptions": "В наличии",
       "price": "119",
       "category": "футболки",
-     
       "offer": true
     },
     {
@@ -104,10 +95,9 @@
       "img": "img/image-121.jpg",
       "name": "Text T-Shirt",
       "label": "New",
-      "description": "White",
+      "descriptions": "В наличии",
       "price": "59",
       "category": "шарфы",
-     
       "offer": true
     },
     {
@@ -115,10 +105,9 @@
       "img": "img/image-120.jpg",
       "name": "Faded Beach Trousers",
       "label": "New",
-      "description": "Ochre",
+      "descriptions": "В наличии",
       "price": "139",
       "category": "шарфы",
-     
       "offer": true
     },
     {
@@ -126,10 +115,9 @@
       "img": "img/image-119.jpg",
       "name": "Embroidered Hoodie",
       "label": "New",
-      "description": "Lilac",
+      "descriptions": "В наличии",
       "price": "89",
       "category": "шарфы",
-     
       "offer": true
     },
     {
@@ -137,10 +125,9 @@
       "img": "img/A1GFd9I31.jpg",
       "name": "Bugatchi Men's Long Sleeve Printed Cotton Pointed Collar Shirt",
       "label": "New",
-      "description": "Periwinkle",
+      "descriptions": "В наличии",
       "price": "109",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -148,10 +135,9 @@
       "img": "img/819MP6k4E6L.jpg",
       "name": "SITKA Gear Men's Hunting Windproof Optifade",
       "label": "",
-      "description": "Elevated Ii",
+      "descriptions": "В наличии",
       "price": "299",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -159,10 +145,9 @@
       "img": "img/713S476iemL.jpg",
       "name": "Derek Rose Men's Short Sleeve T-Shirt",
       "label": "",
-      "description": "Charcoal",
+      "descriptions": "В наличии",
       "price": "119",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -170,10 +155,9 @@
       "img": "img/61BjZJm0AaL.jpg",
       "name": "LEKODE Men Beach Shorts Drawstring Print Pocket Fashion Casual Swim Pants",
       "label": "",
-      "description": "Red-Cola",
+      "descriptions": "В наличии",
       "price": "19",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -181,10 +165,9 @@
       "img": "img/91DXANwJ63L.jpg",
       "name": "Anna by Anuschka Women's Genuine Leather Large Hobo Handbag",
       "label": "Bestseller",
-      "description": "Tuscan Tiles",
+      "descriptions": "В наличии",
       "price": "199",
       "category": "аксессуары",
-     
       "offer": false
     },
     {
@@ -192,10 +175,9 @@
       "img": "img/61vHzipbVL.jpg",
       "name": "Prada Trick Pelle Saffiano Dog",
       "label": "",
-      "description": "White / White Chihuahua Gold Keychain",
+      "descriptions": "В наличии",
       "price": "450",
       "category": "аксессуары",
-     
       "offer": false
     },
     {
@@ -203,10 +185,9 @@
       "img": "img/81zhsxFeEJL.jpg",
       "name": "Willberries Essentials Women's Faux Fur Ear Muffs",
       "label": "Bestseller",
-      "description": "Leopard",
+      "descriptions": "В наличии",
       "price": "19",
       "category": "аксессуары",
-     
       "offer": false
     },
     {
@@ -214,10 +195,9 @@
       "img": "img/61-25976rtL.jpg",
       "name": "Purse Organizer Insert, Felt Bag organizer with zipper",
       "label": "",
-      "description": "Black / Felt",
+      "descriptions": "В наличии",
       "price": "29",
       "category": "аксессуары",
-     
       "offer": false
     },
     {
@@ -225,10 +205,9 @@
       "img": "img/51xrpCz0wuL.jpg",
       "name": "Spyder Mens Pinnacle GTX Ski Glove",
       "label": "",
-      "description": "Black",
+      "descriptions": "В наличии",
       "price": "239",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -236,10 +215,9 @@
       "img": "img/51EeCDi3G9L.jpg",
       "name": "Salvatore Ferragamo Double Gancini Glossy Buckle",
       "label": "",
-      "description": "Black/Brown Reversible Belt",
+      "descriptions": "В наличии",
       "price": "417",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -247,10 +225,9 @@
       "img": "img/61qMUpjOx7L.jpg",
       "name": "American Hat Makers Sierra Cowboy Hat",
       "label": "new",
-      "description": "Handcrafted, Genuine Leather, Breathable / Latte",
+      "descriptions": "Ожидается",
       "price": "217",
       "category": "аксессуары",
-      
       "offer": false
     },
     {
@@ -258,10 +235,9 @@
       "img": "img/41heUmYaMGL.jpg",
       "name": "Oakley Men's Flak 2.0 XL OO9188 Sunglasses Bundle",
       "label": "",
-      "description": "Matte Black/Prizm Deep Water Polarized",
+      "descriptions": "Ожидается",
       "price": "206",
       "category": "аксессуары",
-      
       "offer": false
     }
   ]

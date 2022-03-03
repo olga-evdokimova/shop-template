@@ -68,33 +68,30 @@ if (document.querySelector('.product-gallery__img')) {
 //===================================================
 const getGoods = () => {
     const links = document.querySelectorAll('.content__nav-link')
+
+    //Отрисовываем карточки товаров 
     const renderGoods = (goods) => {
         const goodsContainer = document.querySelector('.content__products')
         goodsContainer.innerHTML = ""
         //перебираем массив goods
         goods.forEach(good => {
-            //создаем в контейнере див( есть в верстке)
             const goodBlock = document.createElement('div')
-            //добавляем ему классы( есть в верстке)
             goodBlock.classList.add('card')
-            console.log(goodBlock);
-            //в этот блок записываем верстку каждого товара
-            // если в лйбл пусто добавляется d-none(класс с {display:none!important}) и он не показывается
             goodBlock.innerHTML = `
                  <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>
                         <div class="card__inner">
                            <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image ">
                           
                              <img src="img/${good.img}" alt="${good.name}">
-                             <span class="card__badge green ${good.lebel ? null : 'none'}"">${good.label}</span>
+                             <span class="card__badge ${good.label ? null : 'none'}">${good.label}</span>
                            </a>
                             <div class="card__content">
                             <a href="https://olga-evdokimova.github.io/shop-template/single.html">
                               <h4 class="card__content-title">${good.name}</h4>
                             </a>
                             <div class="card__content-priсe rub">${good.price}</div>
-                            <div class="card__content-status">В наличии</div>
-                            <a href="" class="card__content-cart"><img src="img/cart.svg" alt=""></a>
+                            <div class="card__content-status">${good.descriptions}</div>
+                            <a href="" class="card__content-cart" data-id="${good.id}"><img src="img/cart.svg" alt=""></a>
                         </div>
                     </div>
             `
