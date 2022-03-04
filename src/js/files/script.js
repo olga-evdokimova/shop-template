@@ -66,7 +66,7 @@ import { flsModules } from "./modules.js";
     // добавить спиннер
     const response = await fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
     const data = await response.json()
-   
+
     // убираем спиннер
 
     //===================================================
@@ -79,6 +79,7 @@ import { flsModules } from "./modules.js";
         goodsContainer.innerHTML = ""
         goods.forEach(good => {
             const goodBlock = document.createElement('div')
+
             goodBlock.classList.add('card')
             goodBlock.innerHTML = `
                  <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>
@@ -99,6 +100,7 @@ import { flsModules } from "./modules.js";
                         </div>
                     </div>
             `
+
             //обращаемся к контейнеру и в каждом переборе используем метод append которай добавляет каждый очередной goodBlock (тоесть выводит все карточки сколько их отфильтровалось )
             goodsContainer.append(goodBlock)
 

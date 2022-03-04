@@ -459,6 +459,7 @@ data-showmore-button="скорость"
 Сниппет (HTML): showmore
 */
 export function showMore() {
+	
 	window.addEventListener("load", function (e) {
 		const showMoreBlocks = document.querySelectorAll('[data-showmore]');
 		let showMoreBlocksRegular;
@@ -528,7 +529,7 @@ export function showMore() {
 					if (index == showMoreTypeValue) break
 				}
 			} else {
-				const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
+				const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 800;
 				hiddenHeight = showMoreTypeValue;
 			}
 			return hiddenHeight;
