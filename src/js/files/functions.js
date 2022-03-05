@@ -529,7 +529,7 @@ export function showMore() {
 					if (index == showMoreTypeValue) break
 				}
 			} else {
-				const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 800;
+				const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 600;
 				hiddenHeight = showMoreTypeValue;
 			}
 			return hiddenHeight;

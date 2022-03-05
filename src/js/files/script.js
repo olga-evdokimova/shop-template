@@ -61,18 +61,22 @@ import { flsModules } from "./modules.js";
         activeItem = galleryItems[0]
         activeItem.classList.add("active")
     }
+    //==========================================================
+
 
     //сразу 
     // добавить спиннер
+    //запрос в базу данных, получаем весь массив
     const response = await fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
     const data = await response.json()
-
     // убираем спиннер
-
-    //===================================================
+  
+    //==============
     const links = document.querySelectorAll('.content__nav-link')
     const goodsContainer = document.querySelector('.content__products')
-
+  // const contentBtn = document.querySelector('.content__btn')
+  
+   
     //Отрисовываем карточки товаров 
     const renderGoods = (goods) => {
         //перебираем массив goods
@@ -100,23 +104,26 @@ import { flsModules } from "./modules.js";
                         </div>
                     </div>
             `
-
+         
             //обращаемся к контейнеру и в каждом переборе используем метод append которай добавляет каждый очередной goodBlock (тоесть выводит все карточки сколько их отфильтровалось )
             goodsContainer.append(goodBlock)
-
+            
         })
+       
     }
 
-    //функция работы с массивом данных data. получаем весь массив данных из json файла
-    const getData = (category) => {
+    //получаем массив выбранной категории
+    const getCategory = (category) => {
         //если категория есть то возвращаем фильтрованную дату(массив данных) , если категории нет то возвращаем всю дату(массив данных)
         const array = category ? data.filter((item) => item.category === category) : data
 
         renderGoods(array)
+       
     }
 
+    //по клику выбираем конкретную категорию
     let activeLink;
-    //перебираем кнопки(категории товаров) и навешиваем на них клик
+    //перебираем кнопки(категории товаров) и навешиваем на них клик и 
     links.forEach((link) => {
         link.addEventListener('click', (e) => {
             e.preventDefault()
@@ -125,14 +132,16 @@ import { flsModules } from "./modules.js";
             activeLink.classList.add("_active")
             //получаем текстовое содержимое кликнутой ссылки
             const category = link.dataset.category // data-category = "значение"
-
-            getData(category)
+           
+            getCategory(category)
+           
         })
+        
     })
     activeLink = links[0]
     activeLink.classList.add("_active")
-
-    getData()
+   
+    getCategory()
 
 })()
 
