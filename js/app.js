@@ -315,41 +315,87 @@
             }));
         }
     }), 0);
-    window.addEventListener("load", (function() {
-        setTimeout((function() {
-            document.body.style.cssText = "opacity: 1; visibility: visible; transition: opacity 1.2s ease 0s;";
-        }), 500);
-    }));
-    if (document.querySelector(".content__nav")) {
-        const scrollNavFunc = () => {
-            const contentNav = document.querySelector(".content__nav");
-            const contentNavTop = contentNav.offsetTop;
-            contentNav.setAttribute("data-scroll", `${contentNavTop}`);
-        };
-        scrollNavFunc();
-    }
-    window.addEventListener("orientationchange", (function() {
-        window.location.reload();
-    }));
-    if (document.querySelector(".product-gallery__img")) {
-        const galleryItems = document.querySelectorAll(".product-gallery__items a");
-        const galleryImg = document.querySelector(".product-gallery__img img");
-        let activeItem;
-        const gallery = () => {
-            galleryItems.forEach((item => {
-                item.addEventListener("click", (e => {
-                    e.preventDefault();
-                    activeItem.classList.remove("active");
-                    activeItem = item;
-                    activeItem.classList.add("active");
-                    galleryImg.src = activeItem.dataset.src;
+    (async () => {
+        if (document.querySelector(".content__nav")) {
+            const scrollNavFunc = () => {
+                const contentNav = document.querySelector(".content__nav");
+                const contentNavTop = contentNav.offsetTop;
+                contentNav.setAttribute("data-scroll", `${contentNavTop}`);
+            };
+            scrollNavFunc();
+        }
+        window.addEventListener("orientationchange", (function() {
+            window.location.reload();
+        }));
+        if (document.querySelector(".product-gallery__img")) {
+            const galleryItems = document.querySelectorAll(".product-gallery__items a");
+            const galleryImg = document.querySelector(".product-gallery__img img");
+            let activeItem;
+            const gallery = () => {
+                galleryItems.forEach((item => {
+                    item.addEventListener("click", (e => {
+                        e.preventDefault();
+                        activeItem.classList.remove("active");
+                        activeItem = item;
+                        activeItem.classList.add("active");
+                        galleryImg.src = activeItem.dataset.src;
+                    }));
                 }));
+            };
+            gallery();
+            activeItem = galleryItems[0];
+            activeItem.classList.add("active");
+        }
+        const response = await fetch("https://test-a65c0-default-rtdb.firebaseio.com/db.json");
+        const data = await response.json();
+        const links = document.querySelectorAll(".content__nav-link");
+        const goodsContainer = document.querySelector(".content__products");
+        const renderGoods = goods => {
+            goodsContainer.innerHTML = "";
+            goods.forEach((good => {
+                const goodBlock = document.createElement("div");
+                goodBlock.classList.add("card");
+                goodBlock.innerHTML = `\n                 <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>\n                        <div class="card__inner">\n                           <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">\n                          \n                             <img src="img/${good.img}" alt="${good.name}">\n                             <span class="card__badge green ${good.label ? null : "none"}">${good.label}</span>\n                             <span class="card__badge red ${good.badge ? null : "none"}">${good.badge}</span>\n                           </a>\n                            <div class="card__content">\n                            <a href="https://olga-evdokimova.github.io/shop-template/single.html">\n                              <h4 class="card__content-title">${good.name}</h4>\n                            </a>\n                            <div class="card__content-priсe rub">${good.price}</div>\n                            <div class="card__content-status">${good.descriptions}</div>\n                            <a href="" class="card__content-cart" data-id="${good.id}"><img src="img/cart.svg" alt=""></a>\n                        </div>\n                    </div>\n            `;
+                goodsContainer.append(goodBlock);
             }));
         };
-        gallery();
-        activeItem = galleryItems[0];
-        activeItem.classList.add("active");
-    }
+        const renderCategory = () => {
+            let goods = [];
+            for (let i = 0; i < data.length; i++) {
+                const item = data[i];
+                if ("все_товары" !== openedCategory && item.category !== openedCategory) continue;
+                if (goods.length >= cardsCount) break;
+                goods.push(item);
+            }
+            renderGoods(goods);
+        };
+        let openedCategory = "все_товары";
+        let activeLink;
+        links.forEach((link => {
+            link.addEventListener("click", (e => {
+                e.preventDefault();
+                activeLink.classList.remove("_active");
+                activeLink = link;
+                activeLink.classList.add("_active");
+                const categoryName = link.dataset.category;
+                openedCategory = categoryName || "все_товары";
+                cardsCount = 3;
+                showMore.style.display = "block";
+                renderCategory();
+            }));
+        }));
+        activeLink = links[0];
+        activeLink.classList.add("_active");
+        const showMore = document.querySelector(".content__btn");
+        let cardsCount = 3;
+        showMore.addEventListener("click", (e => {
+            cardsCount += 3;
+            renderCategory();
+            const a = "все_товары" === openedCategory ? data.length : data.filter((item => item.category === openedCategory)).length;
+            if (a <= cardsCount) showMore.style.display = "none";
+        }));
+        renderCategory();
+    })();
     window["FLS"] = true;
     isWebp();
     menuInit();

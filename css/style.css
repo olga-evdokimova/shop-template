@@ -442,34 +442,6 @@ span {
   transition: all 0.5s ease 0s;
 }
 
-.btn-product {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-weight: 700;
-  font-size: 0.875rem;
-  line-height: 1.2;
-  white-space: nowrap;
-  min-width: 8.5rem;
-  height: 2.25rem;
-  padding: 0.625rem 0.3125rem;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-}
-
-.btn-product._active {
-  background-color: #f2f2f2;
-}
-
 .rub:after {
   content: "₽";
   padding-left: 0.3125rem;
@@ -494,6 +466,7 @@ span {
 }
 
 .card__inner {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,10 +474,13 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
 }
 
 .card__image {
-  display: block;
   padding: 0 0 100% 0;
 }
 
@@ -523,6 +499,7 @@ span {
           align-items: center;
   color: #fff;
   font-weight: 500;
+  line-height: 1;
   text-transform: capitalize;
   padding: 0.3125rem;
   border-radius: 1.25rem;
@@ -531,14 +508,26 @@ span {
 }
 
 .card__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   padding: 1.5625rem 0.625rem 1.5625rem 0.9375rem;
   background-color: #fff;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .card__content-title {
   text-transform: uppercase;
-  padding-bottom: 0.9375rem;
+  margin-bottom: 0.9375rem;
   letter-spacing: -0.0625rem;
   -webkit-transition: -webkit-transform 0.5s ease 0s;
   transition: -webkit-transform 0.5s ease 0s;
@@ -549,6 +538,7 @@ span {
 
 .card__content-priсe {
   font-size: 1.5rem;
+  margin-top: auto;
   margin-bottom: 0.625rem;
   -webkit-transition: -webkit-transform 0.5s ease 0s;
   transition: -webkit-transform 0.5s ease 0s;
@@ -581,8 +571,8 @@ span {
   background-color: #27ae60;
 }
 
-.grey {
-  background-color: #4f4f4f;
+.red {
+  background-color: red;
 }
 
 .banner {
@@ -635,6 +625,10 @@ span {
     -webkit-transform: translateX(-125rem);
             transform: translateX(-125rem);
   }
+}
+
+.none {
+  display: none;
 }
 
 .header {
@@ -947,8 +941,7 @@ span {
 
 .first-screen__images-img {
   display: block;
-  padding: 0 0 60% 0;
-  min-height: 27.5rem;
+  height: 27.5rem;
 }
 
 @supports (margin-left: clamp( 0.0000000625rem , -12.8568077589rem  +  26.7857138393vw , 3.75rem )) {
@@ -1065,6 +1058,34 @@ span {
   margin: 0 0.625rem;
 }
 
+.content__nav-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  min-width: 8.5rem;
+  height: 2.25rem;
+  padding: 0.625rem 0.3125rem;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.content__nav-link._active {
+  background-color: #f2f2f2;
+}
+
 .content__products {
   padding-top: 3.5rem;
   display: -ms-grid;
@@ -1074,6 +1095,31 @@ span {
      -moz-column-gap: 0.625rem;
           column-gap: 0.625rem;
   grid-template-columns: repeat(auto-fit, minmax(22.5rem, 1fr));
+}
+
+.content__btn {
+  margin: 1.875rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  height: 2.25rem;
+  padding: 0.625rem;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background-color: #f2f2f2;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
 }
 
 .delivery__inner {
@@ -1577,8 +1623,6 @@ span {
 @media (max-width: 991.98px) {
   .first-screen__images-img {
     margin: 0 -0.9375rem;
-    min-height: auto;
-    padding: 0 0 50% 0;
   }
 }
 
@@ -1641,12 +1685,6 @@ span {
     display: none;
   }
 
-  .first-screen__images {
-    -webkit-box-flex: 0;
-        -ms-flex: none;
-            flex: none;
-  }
-
   .first-screen__images-img::before {
     display: none;
   }
@@ -1690,11 +1728,6 @@ span {
 }
 
 @media (max-width: 47.99875em) {
-  .btn-product {
-    border: 0.0625rem solid #000;
-    min-width: 7.5rem;
-  }
-
   .card {
     margin: 0 -0.9375rem;
   }
@@ -1866,6 +1899,11 @@ span {
     top: 55px;
   }
 
+  .content__nav-link {
+    border: 0.0625rem solid #000;
+    min-width: 7.5rem;
+  }
+
   .content__products {
     display: block;
   }
@@ -1971,17 +2009,15 @@ span {
   }
 }
 
+@media (max-width: 29.99875em) {
+  .first-screen__images-img {
+    height: 21.25rem;
+  }
+}
+
 @media (any-hover: hover) and (any-pointer: fine) {
   .btn-buy:hover {
     background-color: #fff;
-    color: #000;
-    -webkit-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-  }
-
-  .btn-product:hover {
-    border: 1px solid #000;
     color: #000;
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
@@ -2045,6 +2081,21 @@ span {
 
   .first-screen__content-soсial a:hover {
     color: #27ae60;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+
+  .content__nav-link:hover {
+    border: 1px solid #000;
+    color: #000;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+
+  .content__btn:hover {
+    border: 1px solid #000;
     -webkit-transition: all 0.5s ease 0s;
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
