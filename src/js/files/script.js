@@ -70,13 +70,13 @@ import { flsModules } from "./modules.js";
     const response = await fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
     const data = await response.json()
     // убираем спиннер
-  
+
     //==============
     const links = document.querySelectorAll('.content__nav-link')
     const goodsContainer = document.querySelector('.content__products')
-  // const contentBtn = document.querySelector('.content__btn')
-  
-   
+    //const contentBtn = document.querySelector('.content__btn')
+
+
     //Отрисовываем карточки товаров 
     const renderGoods = (goods) => {
         //перебираем массив goods
@@ -104,12 +104,12 @@ import { flsModules } from "./modules.js";
                         </div>
                     </div>
             `
-         
+
             //обращаемся к контейнеру и в каждом переборе используем метод append которай добавляет каждый очередной goodBlock (тоесть выводит все карточки сколько их отфильтровалось )
             goodsContainer.append(goodBlock)
-            
+           
         })
-       
+
     }
 
     //получаем массив выбранной категории
@@ -118,7 +118,6 @@ import { flsModules } from "./modules.js";
         const array = category ? data.filter((item) => item.category === category) : data
 
         renderGoods(array)
-       
     }
 
     //по клику выбираем конкретную категорию
@@ -132,18 +131,18 @@ import { flsModules } from "./modules.js";
             activeLink.classList.add("_active")
             //получаем текстовое содержимое кликнутой ссылки
             const category = link.dataset.category // data-category = "значение"
-           
+
             getCategory(category)
-           
+
         })
-        
+
     })
     activeLink = links[0]
     activeLink.classList.add("_active")
-   
-    getCategory()
 
+    getCategory()
 })()
+
 
 
     // const popupFun = () => {
