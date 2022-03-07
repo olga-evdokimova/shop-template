@@ -64,18 +64,16 @@ import { flsModules } from "./modules.js";
     //==========================================================
 
 
-    //сразу 
+    //СОРТИРОВКА И ВЫВОД КАРТОЧЕК ТОВАРОВ===========================
     // добавить спиннер
-    //запрос в базу данных, получаем весь массив
+    //1)запрос в базу данных, получаем весь массив
     const response = await fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
     const data = await response.json()
     // убираем спиннер
 
-    //==============
+
     const links = document.querySelectorAll('.content__nav-link')
     const goodsContainer = document.querySelector('.content__products')
-    //const contentBtn = document.querySelector('.content__btn')
-
 
     //Отрисовываем карточки товаров 
     const renderGoods = (goods) => {
@@ -107,44 +105,80 @@ import { flsModules } from "./modules.js";
 
             //обращаемся к контейнеру и в каждом переборе используем метод append которай добавляет каждый очередной goodBlock (тоесть выводит все карточки сколько их отфильтровалось )
             goodsContainer.append(goodBlock)
-           
+
         })
 
     }
 
-    //получаем массив выбранной категории
-    const getCategory = (category) => {
-        //если категория есть то возвращаем фильтрованную дату(массив данных) , если категории нет то возвращаем всю дату(массив данных)
-        const array = category ? data.filter((item) => item.category === category) : data
+    //2)получаем массив выбранной категории
+    const renderCategory = () => {
+        let goods = []
 
-        renderGoods(array)
+        for (let i = 0; i < data.length; i++) {
+            const item = data[i]
+            //если открытая категория не равна все_товары(вся база) и выбранная категория не равна все_товары(вся база)то...
+            // continue - цикл не прерывается, а переходит к следующей итерации
+            if (openedCategory !== "все_товары" && item.category !== openedCategory) continue
+            //Длина массива больше или равна cardsCount то...
+            //break - Выйти из цикла при вычислении условия в false.
+            if (goods.length >= cardsCount) break
+
+            goods.push(item)
+        }
+        renderGoods(goods)
     }
 
-    //по клику выбираем конкретную категорию
+    //Открытая категория
+    let openedCategory = "все_товары"
+
+    //Активная кнопка, добавляется и убирается класс
     let activeLink;
-    //перебираем кнопки(категории товаров) и навешиваем на них клик и 
+    //3)ПЕребираем все кнопки с категориями
     links.forEach((link) => {
+        //по клику выбираем конкретную категорию
         link.addEventListener('click', (e) => {
             e.preventDefault()
+            //Активная кнопка, добавляется и убирается класс
             activeLink.classList.remove("_active")
             activeLink = link
             activeLink.classList.add("_active")
+
             //получаем текстовое содержимое кликнутой ссылки
-            const category = link.dataset.category // data-category = "значение"
-
-            getCategory(category)
-
+            const categoryName = link.dataset.category
+            // Поменялась открытая категория
+            openedCategory = categoryName || "все_товары"
+            //сразу выводится 3 карточки
+            cardsCount = 3
+            showMore.style.display = 'block'
+            renderCategory()
         })
 
     })
+    //Активная кнопка, добавляется и убирается класс
     activeLink = links[0]
     activeLink.classList.add("_active")
+    
+    //Кнопка ПОКАЗАТЬ ЕЩЕ========================
+    const showMore = document.querySelector('.content__btn')
+    //Клик по кнопке добавляет по 3 карточки 
+    let cardsCount = 3
+    showMore.addEventListener('click', (e) => {
+        cardsCount = cardsCount + 3
+        renderCategory()
 
-    getCategory()
+        const a = openedCategory === "все_товары" ? data.length : data.filter((item) =>
+            item.category === openedCategory).length
+
+        if (a <= cardsCount) {
+            showMore.style.display = 'none'
+        }
+    })
+    renderCategory()
+    //=========================================================================================
 })()
 
 
-
+//===============================================================================
     // const popupFun = () => {
     //     const popupBtn = document.querySelector('.product-select__btn')
     //     const popup = document.querySelector('.popup')
