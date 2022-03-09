@@ -1,0 +1,93 @@
+.cart {
+    padding: rem(120) 0 rem(50);
+    @media (max-width: $mobile) {
+        padding: rem(85) 0 rem(40);
+    }
+    &__title {
+        margin: rem(18) 0 rem(40);
+    }
+    &__subtitle {
+        font-size: rem(24);
+        text-transform: uppercase;
+        margin-bottom: rem(30);
+    }
+    &__items {
+    }
+    &__item {
+        padding-bottom: rem(20);
+        margin-bottom: rem(20);
+        border-bottom: 1px dashed $colorCopy;
+    }
+    &__total {
+        text-align: end;
+        margin:0  rem(50) rem(30) 0;
+        @media (max-width:$tablet){
+            text-align: start;
+        }
+        &-title {
+            margin-bottom: rem(10);
+            font-size: rem(18);
+        }
+        &-price {
+            font-size: rem(24);
+        }
+    }
+
+    &__btn {
+    }
+}
+.cart-item {
+    text-transform: uppercase;
+    &__inner {
+        display: flex;
+        align-items: center;
+        @media (max-width:$tablet){
+            align-items: flex-start;
+        }
+    }
+    &__img {
+        flex: 0 0 rem(80);
+        height: 80px;
+        margin-right: rem(30);
+    }
+    &__body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__title {
+        width: 60%;
+        padding-right: rem(10);
+        @media (max-width:$tablet){
+            padding-bottom: rem(10);
+            width: 100%;
+        }
+    }
+    &__price-wrap {
+        display: flex;
+        align-items: center;
+        @media (max-width:$tablet){
+            padding-top: rem(10);
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+    &__price {
+        font-size: rem(24);
+        margin-left: auto;
+        margin-right: rem(20);
+        @media (max-width:$tablet){
+             margin-left: 0; 
+        }
+    }
+    &__del {
+        padding: rem(10) 0 rem(10) rem(10);
+        font-size: rem(20);
+        cursor: pointer;
+    }
+}

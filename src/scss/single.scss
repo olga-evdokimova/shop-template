@@ -121,6 +121,10 @@
             margin-bottom: rem(10);
         }
     }
+    & .quantity{
+        margin-bottom: rem(30);
+         width: rem(240);
+    }
 }
 
 .product-discription {
@@ -250,8 +254,7 @@
 .quantity {
     display: flex;
     align-items: center;
-    width: rem(240);
-    margin-bottom: rem(30);
+   
     label {
         margin-right: rem(40);
     }

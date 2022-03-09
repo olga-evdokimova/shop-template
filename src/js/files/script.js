@@ -6,11 +6,11 @@ import { flsModules } from "./modules.js";
 
 (async () => {
     //Страница показывается после полной загрузки с задержкой 5сек
-    window.addEventListener("load", function () {
-        // setTimeout(function () {
-        document.body.style.cssText = 'opacity: 1; visibility: visible; transition: opacity 1.2s ease 0s;'
-        // }, 500);
-    });
+    // window.addEventListener("load", function () {
+    //     // setTimeout(function () {
+    //     document.body.style.cssText = 'opacity: 1; visibility: visible; transition: opacity 1.2s ease 0s;'
+    //     // }, 500);
+    // });
 
     //если на странице есть такой класс, выполняй функцию
     if (document.querySelector('.content__nav')) {
@@ -88,7 +88,7 @@ import { flsModules } from "./modules.js";
                         <div class="card__inner">
                            <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">
                           
-                             <img src="img/${good.img}" alt="${good.name}">
+                             <img src="/img/imgCard/${good.img}" alt="${good.name}">
                              <span class="card__badge green ${good.label ? null : 'none'}">${good.label}</span>
                              <span class="card__badge red ${good.badge ? null : 'none'}">${good.badge}</span>
                            </a>
@@ -125,6 +125,7 @@ import { flsModules } from "./modules.js";
 
             goods.push(item)
         }
+       
         renderGoods(goods)
     }
 
@@ -157,7 +158,7 @@ import { flsModules } from "./modules.js";
     //Активная кнопка, добавляется и убирается класс
     activeLink = links[0]
     activeLink.classList.add("_active")
-    
+
     //Кнопка ПОКАЗАТЬ ЕЩЕ========================
     const showMore = document.querySelector('.content__btn')
     //Клик по кнопке добавляет по 3 карточки 
@@ -168,13 +169,17 @@ import { flsModules } from "./modules.js";
 
         const a = openedCategory === "все_товары" ? data.length : data.filter((item) =>
             item.category === openedCategory).length
-
+        
         if (a <= cardsCount) {
             showMore.style.display = 'none'
         }
+       
     })
     renderCategory()
+
     //=========================================================================================
+
+
 })()
 
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Корзина"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+            <section class="cart ">
+                <div class="__container">
+                    <h1 class="cart__title">ОФОРМЛЕНИЕ заказа</h1>
+                    <div class="cart__subtitle">ТОВАРЫ В Корзине</div>
+                    <div class="cart__items">
+                        <div class="cart__item cart-item">
+                            <div class="cart-item__inner">
+                                <div class="cart-item__img -ibg"><img src="@img/sweatshirt-3.jpg" alt=""></div>
+                                <div class="cart-item__body">
+                                    <p class="cart-item__title">Брендовые женские шарфы и платки</p>
+                                    <div class="quantity">
+                                        <div class="quantity__counter">
+                                            <div class="quantity__button quantity__button_minus">-</div>
+                                            <input autocomplete="off" type="text" name="quantity" value="1">
+                                            <div class="quantity__button quantity__button_plus">+</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-item__price-wrap">
+                                        <div class="cart-item__price rub">4290</div>
+                                        <div class="cart-item__del _icon-Trash"></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart__item cart-item">
+                            <div class="cart-item__inner">
+                                <div class="cart-item__img -ibg"><img src="@img/sweatshirt-3.jpg" alt=""></div>
+                                <div class="cart-item__body">
+                                    <p class="cart-item__title">Брендовые женские шарфы и платки</p>
+                                    <div class="quantity">
+                                        <div class="quantity__counter">
+                                            <div class="quantity__button quantity__button_minus">-</div>
+                                            <input autocomplete="off" type="text" name="quantity" value="1">
+                                            <div class="quantity__button quantity__button_plus">+</div>
+                                        </div>
+                                    </div>
+                                    <div class="cart-item__price-wrap">
+                                        <div class="cart-item__price rub">4290</div>
+                                        <div class="cart-item__del _icon-Trash"></div>
+                                    </div>
+                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart__total">
+                        <div class="cart__total-title">Итого</div>
+                        <div class="cart__total-price rub">4290</div>
+                    </div>
+                    <button class="cart__btn  btn-buy">ОФОРМЛЕНИЕ заказа</button>
+                </div>
+            </section>
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    @@include('html/_js.htm',{})
+
+</body>
+
+</html>

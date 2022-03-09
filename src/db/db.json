@@ -2,7 +2,7 @@
   "db": [
     {
       "id": "001",
-      "img": "img/hats.jpg",
+      "img": "hats.jpg",
       "name": "Шапки вязанные из натуральной шерсти",
       "label": "New",
       "badge": "Bestseller",
@@ -13,7 +13,7 @@
     },
     {
       "id": "002",
-      "img": "img/futbolki.jpg",
+      "img": "futbolki.jpg",
       "name": "Хлопковые мужские футболки",
       "label": "New",
       "descriptions": "В наличии",
@@ -23,7 +23,7 @@
     },
     {
       "id": "003",
-      "img": "img/hats.jpg",
+      "img": "hats.jpg",
       "name": "Шапки вязанные из натуральной шерсти",
       "badge": "Bestseller",
       "descriptions": "Ожидается",
@@ -33,7 +33,7 @@
     },
     {
       "id": "004",
-      "img": "img/futbolki.jpg",
+      "img": "futbolki.jpg",
       "name": "Хлопковые мужские футболки",
       "badge": "Bestseller",
       "descriptions": "Ожидается",
@@ -43,7 +43,7 @@
     },
     {
       "id": "005",
-      "img": "img/hats.jpg",
+      "img": "hats.jpg",
       "name": "Шапки вязанные из натуральной шерсти",
       "label": "New",
       "descriptions": "В наличии",
@@ -53,7 +53,7 @@
     },
     {
       "id": "006",
-      "img": "img/futbolki.jpg",
+      "img": "futbolki.jpg",
       "name": "Хлопковые мужские футболки",
       "label": "",
       "descriptions": "В наличии",
@@ -63,7 +63,7 @@
     },
     {
       "id": "007",
-      "img": "img/futbolki.jpg",
+      "img": "futbolki.jpg",
       "name": "Хлопковые мужские футболки",
       "label": "",
       "descriptions": "Ожидается",
@@ -73,7 +73,7 @@
     },
     {
       "id": "008",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "badge": "Bestseller",
       "descriptions": "В наличии",
@@ -83,7 +83,7 @@
     },
     {
       "id": "009",
-      "img": "img/hats.jpg",
+      "img": "hats.jpg",
       "name": "Шапки вязанные из натуральной шерсти",
       "label": "new",
       "descriptions": "В наличии",
@@ -93,7 +93,7 @@
     },
     {
       "id": "010",
-      "img": "img/futbolki.jpg",
+      "img": "futbolki.jpg",
       "name": "Хлопковые мужские футболки",
       "label": "New",
       "descriptions": "В наличии",
@@ -103,7 +103,7 @@
     },
     {
       "id": "011",
-      "img": "img/scarves.jpg",
+      "img": "scarves.jpg",
       "name": "Брендовые женские шарфы и платки",
       "label": "New",
       "descriptions": "В наличии",
@@ -113,7 +113,7 @@
     },
     {
       "id": "012",
-      "img": "img/futbolki.jpg",
+      "img": "futbolki.jpg",
       "name": "Хлопковые мужские футболки",
       "label": "New",
       "descriptions": "В наличии",
@@ -123,7 +123,7 @@
     },
     {
       "id": "013",
-      "img": "img/scarves.jpg",
+      "img": "scarves.jpg",
       "name": "Брендовые женские шарфы и платки",
       "label": "New",
       "descriptions": "В наличии",
@@ -133,7 +133,7 @@
     },
     {
       "id": "014",
-      "img": "img/scarves.jpg",
+      "img": "scarves.jpg",
       "name": "Брендовые женские шарфы и платки",
       "label": "",
       "descriptions": "В наличии",
@@ -143,7 +143,7 @@
     },
     {
       "id": "015",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "badge": "Bestseller",
       "descriptions": "В наличии",
@@ -153,7 +153,7 @@
     },
     {
       "id": "016",
-      "img": "img/scarves.jpg",
+      "img": "scarves.jpg",
       "name": "Брендовые женские шарфы и платки",
       "label": "New",
       "descriptions": "В наличии",
@@ -163,7 +163,7 @@
     },
     {
       "id": "017",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "badge": "Bestseller",
       "descriptions": "В наличии",
@@ -173,7 +173,7 @@
     },
     {
       "id": "018",
-      "img": "img/hats.jpg",
+      "img": "hats.jpg",
       "name": "Шапки вязанные из натуральной шерсти",
       "label": "New",
       "descriptions": "В наличии",
@@ -183,7 +183,7 @@
     },
     {
       "id": "019",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "badge": "Bestseller",
       "descriptions": "В наличии",
@@ -193,7 +193,7 @@
     },
     {
       "id": "020",
-      "img": "img/scarves.jpg",
+      "img": "scarves.jpg",
       "name": "Брендовые женские шарфы и платки",
       "label": "New",
       "descriptions": "В наличии",
@@ -203,7 +203,7 @@
     },
     {
       "id": "021",
-      "img": "img/hats.jpg",
+      "img": "hats.jpg",
       "name": "Шапки вязанные из натуральной шерсти",
       "label": "New",
       "descriptions": "В наличии",
@@ -213,7 +213,7 @@
     },
     {
       "id": "022",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "label": "",
       "descriptions": "В наличии",
@@ -223,7 +223,7 @@
     },
     {
       "id": "023",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "label": "New",
       "descriptions": "Ожидается",
@@ -233,7 +233,7 @@
     },
     {
       "id": "024",
-      "img": "img/accessories.jpg",
+      "img": "accessories.jpg",
       "name": "Аксессуары от популярных брендов",
       "label": "",
       "descriptions": "Ожидается",

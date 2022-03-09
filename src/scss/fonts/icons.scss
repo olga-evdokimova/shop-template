@@ -14,13 +14,16 @@
 		display: block;
 	}
 }
+._icon-Trash:before {
+  content: "\e904";
+}
 ._icon-Facebook:before {
   content: "\e900";
   
 }
 ._icon-Instagram:before {
   content: "\e901";
-  
+
 }
 ._icon-Shopping:before {
   content: "\e902";
