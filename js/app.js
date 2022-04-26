@@ -346,7 +346,7 @@
             activeItem = galleryItems[0];
             activeItem.classList.add("active");
         }
-        const response = await fetch("https://test-a65c0-default-rtdb.firebaseio.com/db.json");
+        const response = await fetch("https://sinuous-concept-323917-default-rtdb.firebaseio.com/db.json");
         const data = await response.json();
         const links = document.querySelectorAll(".content__nav-link");
         const goodsContainer = document.querySelector(".content__products");
@@ -355,7 +355,7 @@
             goods.forEach((good => {
                 const goodBlock = document.createElement("div");
                 goodBlock.classList.add("card");
-                goodBlock.innerHTML = `\n                 <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>\n                        <div class="card__inner">\n                           <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">\n                          \n                             <img src="img/${good.img}" alt="${good.name}">\n                             <span class="card__badge green ${good.label ? null : "none"}">${good.label}</span>\n                             <span class="card__badge red ${good.badge ? null : "none"}">${good.badge}</span>\n                           </a>\n                            <div class="card__content">\n                            <a href="https://olga-evdokimova.github.io/shop-template/single.html">\n                              <h4 class="card__content-title">${good.name}</h4>\n                            </a>\n                            <div class="card__content-priсe rub">${good.price}</div>\n                            <div class="card__content-status">${good.descriptions}</div>\n                            <a href="" class="card__content-cart" data-id="${good.id}"><img src="img/cart.svg" alt=""></a>\n                        </div>\n                    </div>\n            `;
+                goodBlock.innerHTML = `\n                 <div class="card__bg" style="background-image: url('img/bg-photo.jpg'); "></div>\n                        <div class="card__inner">\n                           <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">\n                          \n                             <img src="/img/imgCard/${good.img}" alt="${good.name}">\n                             <span class="card__badge green ${good.label ? null : "none"}">${good.label}</span>\n                             <span class="card__badge red ${good.badge ? null : "none"}">${good.badge}</span>\n                           </a>\n                            <div class="card__content">\n                            <a href="https://olga-evdokimova.github.io/shop-template/single.html">\n                              <h4 class="card__content-title">${good.name}</h4>\n                            </a>\n                            <div class="card__content-priсe rub">${good.price}</div>\n                            <div class="card__content-status">${good.descriptions}</div>\n                            <a href="" class="card__content-cart" data-id="${good.id}"><img src="img/cart.svg" alt=""></a>\n                        </div>\n                    </div>\n            `;
                 goodsContainer.append(goodBlock);
             }));
         };
@@ -395,6 +395,20 @@
             if (a <= cardsCount) showMore.style.display = "none";
         }));
         renderCategory();
+        const addToCart = id => {
+            const clicked = data.find((item => item.id === id));
+            const cart = clicked ? data : [];
+            console.log(clicked);
+            console.log(cart);
+        };
+        const cardBtns = document.querySelectorAll(".card__content-cart");
+        cardBtns.forEach((cardBtn => {
+            cardBtn.addEventListener("click", (e => {
+                e.preventDefault();
+                const cardBtnId = cardBtn.dataset.id;
+                addToCart(cardBtnId);
+            }));
+        }));
     })();
     window["FLS"] = true;
     isWebp();

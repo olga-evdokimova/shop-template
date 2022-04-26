@@ -3,8 +3,8 @@
 @font-face {
   font-family: RobotoCondensed;
   font-display: swap;
-  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
-  font-weight: 700;
+  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -19,8 +19,8 @@
 @font-face {
   font-family: RobotoCondensed;
   font-display: swap;
-  src: url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -37,6 +37,10 @@
 
 [class*=_icon-]:before {
   display: block;
+}
+
+._icon-Trash:before {
+  content: "\e904";
 }
 
 ._icon-Facebook:before {
@@ -1344,6 +1348,11 @@ span {
   margin-bottom: 1.25rem;
 }
 
+.product-content .quantity {
+  margin-bottom: 1.875rem;
+  width: 15rem;
+}
+
 .product-discription {
   font-weight: 400;
 }
@@ -1520,8 +1529,6 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 15rem;
-  margin-bottom: 1.875rem;
 }
 
 .quantity label {
@@ -1612,6 +1619,100 @@ span {
       -ms-flex: 0 0 32%;
           flex: 0 0 32%;
   margin-bottom: 0.625rem;
+}
+
+.cart {
+  padding: 7.5rem 0 3.125rem;
+}
+
+.cart__title {
+  margin: 1.125rem 0 2.5rem;
+}
+
+.cart__subtitle {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 1.875rem;
+}
+
+.cart__item {
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px dashed #4f4f4f;
+}
+
+.cart__total {
+  text-align: end;
+  margin: 0 3.125rem 1.875rem 0;
+}
+
+.cart__total-title {
+  margin-bottom: 0.625rem;
+  font-size: 1.125rem;
+}
+
+.cart__total-price {
+  font-size: 1.5rem;
+}
+
+.cart-item {
+  text-transform: uppercase;
+}
+
+.cart-item__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-item__img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 5rem;
+          flex: 0 0 5rem;
+  height: 80px;
+  margin-right: 1.875rem;
+}
+
+.cart-item__body {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart-item__title {
+  width: 60%;
+  padding-right: 0.625rem;
+}
+
+.cart-item__price-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-item__price {
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: 1.25rem;
+}
+
+.cart-item__del {
+  padding: 0.625rem 0 0.625rem 0.625rem;
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
 @media (max-width: 75em) {
@@ -1724,6 +1825,43 @@ span {
     -webkit-transform-origin: 25% 37%;
         -ms-transform-origin: 25% 37%;
             transform-origin: 25% 37%;
+  }
+
+  .cart__total {
+    text-align: start;
+  }
+
+  .cart-item__inner {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .cart-item__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .cart-item__title {
+    padding-bottom: 0.625rem;
+    width: 100%;
+  }
+
+  .cart-item__price-wrap {
+    padding-top: 0.625rem;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .cart-item__price {
+    margin-left: 0;
   }
 }
 
@@ -2006,6 +2144,10 @@ span {
 
   .product-featured__inner .card {
     margin-bottom: 1.875rem;
+  }
+
+  .cart {
+    padding: 5.3125rem 0 2.5rem;
   }
 }
 
