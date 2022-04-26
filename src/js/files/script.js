@@ -67,7 +67,7 @@ import { flsModules } from "./modules.js";
     //СОРТИРОВКА И ВЫВОД КАРТОЧЕК ТОВАРОВ===========================
     // добавить спиннер
     //1)запрос в базу данных, получаем весь массив
-    const response = await fetch('https://test-a65c0-default-rtdb.firebaseio.com/db.json')
+    const response = await fetch('https://sinuous-concept-323917-default-rtdb.firebaseio.com/db.json')
     const data = await response.json()
     // убираем спиннер
 
@@ -169,7 +169,7 @@ import { flsModules } from "./modules.js";
 
         const a = openedCategory === "все_товары" ? data.length : data.filter((item) =>
             item.category === openedCategory).length
-        
+     
         if (a <= cardsCount) {
             showMore.style.display = 'none'
         }
@@ -178,7 +178,22 @@ import { flsModules } from "./modules.js";
     renderCategory()
 
     //=========================================================================================
+    const addToCart = (id) => {
+        const clicked = data.find(item => item.id === id)//обьект товара
+        const cart = clicked ? data : []
+        console.log(clicked);
+        console.log(cart);
+}
+    const cardBtns = document.querySelectorAll('.card__content-cart')
+ 
+    cardBtns.forEach((cardBtn) => {
+        cardBtn.addEventListener('click', (e) => {
+            e.preventDefault()
+            const cardBtnId = cardBtn.dataset.id//id кнопки 
+            addToCart(cardBtnId)
+        })
 
+    })
 
 })()
 
