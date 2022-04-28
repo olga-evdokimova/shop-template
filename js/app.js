@@ -339,6 +339,7 @@
                         activeItem = item;
                         activeItem.classList.add("active");
                         galleryImg.src = activeItem.dataset.src;
+                        galleryImg.srcset = activeItem.dataset.srcset;
                     }));
                 }));
             };
