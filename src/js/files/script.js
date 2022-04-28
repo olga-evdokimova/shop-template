@@ -88,7 +88,7 @@ import { flsModules } from "./modules.js";
                         <div class="card__inner">
                            <a href="https://olga-evdokimova.github.io/shop-template/single.html" class="card__image -ibg">
                           
-                             <img src="/img/imgCard/${good.img}" alt="${good.name}">
+                             <img src="./img/imgCard/${good.img}" alt="${good.name}">
                              <span class="card__badge green ${good.label ? null : 'none'}">${good.label}</span>
                              <span class="card__badge red ${good.badge ? null : 'none'}">${good.badge}</span>
                            </a>
