@@ -19,17 +19,45 @@
                     <div class="product__inner">
                         <div class="product-gallery">
                             <div class="product-gallery__img -ibg">
-                                <img src="@img/sweatshirt-1.jpg">
+                                <!-- <img src="@img/sweatshirt-1.jpg"> -->
+                                <picture>
+                                    <source srcset="img/sweatshirt-1.webp" type="image/webp">
+                                    <img src="@img/sweatshirt-1.jpg">
+                                </picture>
                             </div>
                             <div class="product-gallery__items">
-                                <a href="" class="product-gallery__item -ibg active" data-src="img/sweatshirt-1.jpg">
+                                <!-- <a href="" class="product-gallery__item -ibg active" data-src="img/sweatshirt-1.jpg">
                                     <img src="@img/sweatshirt-1.jpg"></a>
                                 <a href="" class="product-gallery__item -ibg" data-src="img/sweatshirt-2.jpg">
                                     <img src="@img/sweatshirt-2.jpg"></a>
                                 <a href="" class="product-gallery__item -ibg" data-src="img/sweatshirt-3.jpg">
                                     <img src="@img/sweatshirt-3.jpg"></a>
                                 <a href="" class="product-gallery__item -ibg" data-src="img/sweatshirt-2.jpg">
-                                    <img src="@img/sweatshirt-2.jpg"></a>
+                                    <img src="@img/sweatshirt-2.jpg"></a> -->
+                                <a href="" class="product-gallery__item -ibg active" data-src="img/sweatshirt-1.jpg" data-srcset="img/sweatshirt-1.webp">
+                                    <picture>
+                                        <source srcset="img/sweatshirt-1.webp" type="image/webp">
+                                        <img src="@img/sweatshirt-1.jpg">
+                                    </picture>
+                                </a>
+                                <a href="" class="product-gallery__item -ibg " data-src="img/sweatshirt-2.jpg" data-srcset="img/sweatshirt-2.webp">
+                                    <picture>
+                                        <source srcset="img/sweatshirt-2.webp" type="image/webp">
+                                        <img src="@img/sweatshirt-2.jpg">
+                                    </picture>
+                                </a>
+                                <a href="" class="product-gallery__item -ibg " data-src="img/sweatshirt-3.jpg" data-srcset="img/sweatshirt-3.webp">
+                                    <picture>
+                                        <source srcset="img/sweatshirt-3.webp" type="image/webp">
+                                        <img src="@img/sweatshirt-3.jpg">
+                                    </picture>
+                                </a>
+                                <a href="" class="product-gallery__item -ibg " data-src="img/sweatshirt-2.jpg" data-srcset="img/sweatshirt-2.webp">
+                                    <picture>
+                                        <source srcset="img/sweatshirt-2.webp" type="image/webp">
+                                        <img src="@img/sweatshirt-2.jpg">
+                                    </picture>
+                                </a>
                             </div>
                         </div>
                         <div class="product-content">
@@ -47,7 +75,8 @@
                                 <form class="product-select__form" action="">
                                     <label class="product-select__form-label" for="">Цвет</label>
                                     <div class="radio-color">
-                                        <input class="radio-color__custom" type="radio" name="color" id="color-01" checked="checked">
+                                        <input class="radio-color__custom" type="radio" name="color" id="color-01"
+                                            checked="checked">
                                         <label for="color-01" style="color:blue"></label>
                                     </div>
                                     <div class="radio-color">
@@ -75,7 +104,7 @@
                                         <label for="radio-03"><span>L-XL</span></label>
                                     </div>
                                 </form>
-                                <div data-popup="#popup"  class="product-select__btn">Таблица размеров</div>
+                                <div data-popup="#popup" class="product-select__btn">Таблица размеров</div>
                             </div>
 
                             <div class="quantity">

@@ -41,22 +41,24 @@ import { flsModules } from "./modules.js";
     if (document.querySelector('.product-gallery__img')) {
         const galleryItems = document.querySelectorAll('.product-gallery__items a');
         const galleryImg = document.querySelector('.product-gallery__img img');
-
+        const gallerySource = document.querySelector('.product-gallery__img source');
+        
         let activeItem;
         const gallery = () => {
             galleryItems.forEach(item => {
-                // для каждого кнкретного
+                // для каждого конкретного
                 item.addEventListener('click', (e) => {
                     e.preventDefault();
                     activeItem.classList.remove("active")
                     activeItem = item
                     activeItem.classList.add("active")
                     galleryImg.src = activeItem.dataset.src;
-
+                    gallerySource.srcset = activeItem.dataset.srcset;
+                 
                 });
             })
         }
-
+       
         gallery()
         activeItem = galleryItems[0]
         activeItem.classList.add("active")
@@ -125,7 +127,7 @@ import { flsModules } from "./modules.js";
 
             goods.push(item)
         }
-       
+
         renderGoods(goods)
     }
 
@@ -169,11 +171,11 @@ import { flsModules } from "./modules.js";
 
         const a = openedCategory === "все_товары" ? data.length : data.filter((item) =>
             item.category === openedCategory).length
-     
+
         if (a <= cardsCount) {
             showMore.style.display = 'none'
         }
-       
+
     })
     renderCategory()
 
@@ -183,9 +185,9 @@ import { flsModules } from "./modules.js";
         const cart = clicked ? data : []
         console.log(clicked);
         console.log(cart);
-}
+    }
     const cardBtns = document.querySelectorAll('.card__content-cart')
- 
+
     cardBtns.forEach((cardBtn) => {
         cardBtn.addEventListener('click', (e) => {
             e.preventDefault()
