@@ -330,6 +330,7 @@
         if (document.querySelector(".product-gallery__img")) {
             const galleryItems = document.querySelectorAll(".product-gallery__items a");
             const galleryImg = document.querySelector(".product-gallery__img img");
+            const gallerySourse = document.querySelector(".product-gallery__img sourse");
             let activeItem;
             const gallery = () => {
                 galleryItems.forEach((item => {
@@ -339,7 +340,7 @@
                         activeItem = item;
                         activeItem.classList.add("active");
                         galleryImg.src = activeItem.dataset.src;
-                        galleryImg.srcset = activeItem.dataset.srcset;
+                        gallerySourse.srcset = activeItem.dataset.srcset;
                     }));
                 }));
             };
