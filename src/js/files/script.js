@@ -54,8 +54,7 @@ import { flsModules } from "./modules.js";
                     activeItem.classList.add("active")
                     galleryImg.src = activeItem.dataset.src;
                     gallerySource.srcset = activeItem.dataset.srcset;
-                 
-                });
+                  });
             })
         }
        
